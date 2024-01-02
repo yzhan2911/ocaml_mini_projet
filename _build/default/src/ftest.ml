@@ -1,5 +1,7 @@
 open Gfile
 open Tools
+open Ford_fulkerson
+
 let () =
 
   (* Check the number of command-line arguments *)
@@ -26,11 +28,10 @@ let () =
   in
 
   (* Open file *)
-  let graph = from_file infile in 
-  
-  let newgraph = clone_nodes(graph)in
-  let addarc_graph = add_arc newgraph 1 2 100 in 
-  let graph_affiche = gmap addarc_graph string_of_int in 
+  let graph1 = from_file infile in 
+
+  let new_graph = init_graph graph1 in
+  let graph_affiche = gmap new_graph string_of_int in 
  (* Rewrite the graph that has been read. *)
   let () = write_file outfile (graph_affiche) in
   ()
