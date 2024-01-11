@@ -23,15 +23,14 @@ let () =
   and outfile = Sys.argv.(4)
   
   (* These command-line arguments are not used for the moment. *)
-  and _source = int_of_string Sys.argv.(2)
-  and _sink = int_of_string Sys.argv.(3)
+  and source = int_of_string Sys.argv.(2)
+  and sink = int_of_string Sys.argv.(3)
   in
 
   (* Open file *)
   let graph1 = from_file infile in 
-
-  let new_graph = init_graph graph1 in
-  let graph_affiche = gmap new_graph string_of_int in 
+  
+  let graph_affiche = gmap (ford_fulkerson graph1 source sink) string_of_int in 
  (* Rewrite the graph that has been read. *)
   let () = write_file outfile (graph_affiche) in
   ()
