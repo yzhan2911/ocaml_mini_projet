@@ -1,4 +1,7 @@
 # Projet Ford-Fulkerson avec OCaml
+Yu Zhang 
+Yongjia Zeng
+Groupe B1
 
 ## Description
 
