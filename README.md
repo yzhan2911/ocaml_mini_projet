@@ -21,4 +21,4 @@ Ce projet implémente l'algorithme de Ford-Fulkerson pour calculer le flux maxim
 ## Utilisation
 
 - **make pour compiler**
-- **graph= <nom de graph> src = <id de noeud source>  dst = <id de noeud destinaire> make demo**
+- **graph= "nom de graph" src = "id de noeud source" dst = "id de noeud destinaire" make demo**
