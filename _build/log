@@ -2,8 +2,8 @@
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /home/yzhang5/4IR/ocaml_mini_projet
-# Auto-detected concurrency: 8
-$ /mnt/commetud/GEI/OCaml/.opam/4.14.0/bin/ocamlc.opt -config > /tmp/dune_61d720_output
+# Auto-detected concurrency: 6
+$ /mnt/commetud/GEI/OCaml/.opam/4.14.0/bin/ocamlc.opt -config > /tmp/dune_1d7a1c_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"

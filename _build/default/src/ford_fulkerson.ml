@@ -77,6 +77,7 @@ let augmenter_flot (graph: 'a graph) (ids: id list) (augmentation: 'a) =
 
 
  let diminuer_capacite (graph: 'a graph) (ids: id list) (diminution: 'a) =
+  if diminution = 1000 then graph else
   let rec update_flot gr = function
     | [] | [_] -> gr
     | id1 :: (id2 :: rest) ->
@@ -102,10 +103,7 @@ let ford_fulkerson (graph: string graph) (idsrc: id) (iddes: id) =
       | None -> 
           Printf.printf "Plus de chemin trouvé. Terminé.\n";  
           (gr, paths)  
-      | Some idlist -> 
-          Printf.printf "Chemin trouvé: %s\n" (String.concat " -> " (List.map string_of_int idlist)); 
-          let minlbl = trouve_min gr idlist 1000 in
-          Printf.printf "Label minimum sur le chemin: %s\n" (string_of_int minlbl); 
+      | Some idlist -> let minlbl = trouve_min gr idlist 1000 in
             let grupdate_capa = diminuer_capacite gr idlist minlbl in
               let grupdate_flot = augmenter_flot grupdate_capa (List.rev idlist) minlbl in
                 run grupdate_flot (idlist :: paths) ids idd  

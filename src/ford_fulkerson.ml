@@ -77,6 +77,7 @@ let augmenter_flot (graph: 'a graph) (ids: id list) (augmentation: 'a) =
 
 
  let diminuer_capacite (graph: 'a graph) (ids: id list) (diminution: 'a) =
+  if diminution = 1000 then graph else
   let rec update_flot gr = function
     | [] | [_] -> gr
     | id1 :: (id2 :: rest) ->
